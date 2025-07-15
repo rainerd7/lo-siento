@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lo siento...</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Patrick Hand', cursive;
+      background: linear-gradient(to bottom, #cbe8f6, #ffffff);
+      color: #333;
+      text-align: center;
+    }
+
+    .container {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #316b83;
+    }
+
+    .snoopy-img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      animation: float 4s ease-in-out infinite;
+      margin-top: 10px;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+    .heart {
+      width: 60px;
+      height: 60px;
+      background-color: #ff6b81;
+      position: relative;
+      margin: 30px auto;
+      transform: rotate(-45deg);
+      animation: beat 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      width: 60px;
+      height: 60px;
+      background-color: #ff6b81;
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -30px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 30px;
+      top: 0;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1) rotate(-45deg); }
+      50% { transform: scale(1.2) rotate(-45deg); }
+    }
+
+    /* ✍️ Estilo carta animada línea por línea */
+    .letter {
+      margin-top: 40px;
+      font-size: 1.5em;
+      line-height: 1.6;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .line {
+      opacity: 0;
+      animation: typeLine 1s ease forwards;
+    }
+
+    .line:nth-child(1) { animation-delay: 0.5s; }
+    .line:nth-child(2) { animation-delay: 2s; }
+    .line:nth-child(3) { animation-delay: 3.5s; }
+    .line:nth-child(4) { animation-delay: 5s; }
+    .line:nth-child(5) { animation-delay: 6.5s; }
+    .line:nth-child(6) { animation-delay: 8s; }
+    .line:nth-child(7) { animation-delay: 9.5s; }
+
+    @keyframes typeLine {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #ffd1dc;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 30px;
+    }
+
+    .button:hover {
+      background-color: #ffb3c6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Lo siento... 💔</h1>
+
+    <img 
+      src="images.jpg" 
+      alt="Snoopy triste" 
+      class="snoopy-img"
+    />
+
+    <div class="letter">
+      <div class="line">He estado pensando mucho en lo que pasó...</div>
+      <div class="line">Y la verdad es que no dejo de sentirme mal por lastimarte.</div>
+      <div class="line">No era mi intención, pero entiendo que te dolió.</div>
+      <div class="line">Solo quiero que sepas que me importas de verdad.</div>
+      <div class="line">Me haces falta, y tu silencio duele más que cualquier regaño.</div>
+      <div class="line">Si aún queda un poco de espacio en tu corazón...</div>
+      <div class="line">¿Podrías dejarme entrar otra vez?</div>
+    </div>
+
+    <div class="heart"></div>
+
+    <button class="button" onclick="alert('Gracias por perdonarme ❤️')">Sí, te perdono</button>
+  </div>
+</body>
+</html>
